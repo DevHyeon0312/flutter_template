@@ -1,7 +1,7 @@
 ### flutter_template
 #### Spec
 - [get](https://pub.dev/packages/get) - Routing Management
-- [Riverpod](https://pub.dev/packages/flutter_riverpod) - State Management
+- [riverpod](https://pub.dev/packages/flutter_riverpod) - State Management
 
 
 #### App Package Name Change
