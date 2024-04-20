@@ -1,4 +1,10 @@
 # flutter_template
+#### Spec
+```text
+1. GetX(Routing)
+2. Riverpod(State Management)
+3. Dio(Network)
+```
 
 ### App Package Name Change
 ```bash
