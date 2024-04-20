@@ -1,8 +1,11 @@
 ### flutter_template
 #### Spec
 - Get(Routing)[https://pub.dev/packages/get]
-- Riverpod(State Management)[https://pub.dev/packages/flutter_riverpod]
-- 
+- [Riverpod(State Management)](https://pub.dev/packages/flutter_riverpod)
+-
+```html
+<h1><a href="https://pub.dev/packages/get" target="_blank">Get(Routing)</a></h1>
+```
 
 #### App Package Name Change
 ```bash
