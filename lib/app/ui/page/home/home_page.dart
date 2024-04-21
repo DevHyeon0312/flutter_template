@@ -33,9 +33,31 @@ class _HomePageState extends ConsumerState<HomePage>
           return;
         }
       },
-      child: const Scaffold(
-        body: Center(
-          child: Text('HomePage'),
+      child: Scaffold(
+        body: CustomScrollView(
+          slivers: <Widget>[
+            SliverAppBar(
+              title: Text('Home'),
+              floating: true,
+              snap: true,
+              pinned: true,
+              expandedHeight: 200,
+              flexibleSpace: FlexibleSpaceBar(
+                background: Image.network(
+                  'https://picsum.photos/250?image=9',
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) => ListTile(
+                  title: Text('Item $index'),
+                ),
+                childCount: 100,
+              ),
+            ),
+          ],
         ),
       ),
     );

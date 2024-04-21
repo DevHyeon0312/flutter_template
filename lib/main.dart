@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/app/route/app_page.dart';
 import 'package:flutter_template/app/route/app_route.dart';
+import 'package:flutter_template/style/theme/app_theme.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -15,9 +15,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: true,
       initialRoute: AppRoute.initial.name,
       getPages: AppPage.pages,
+      theme: ThemeData(
+        useMaterial3: true,
+        appBarTheme: AppTheme().appBarThemeLight,
+        bottomNavigationBarTheme: AppTheme().bottomNavigationBarThemeLight,
+        textButtonTheme: AppTheme().textButtonThemeLight,
+        dialogTheme: AppTheme().dialogThemeLight,
+      ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        appBarTheme: AppTheme().appBarThemeDark,
+        bottomNavigationBarTheme: AppTheme().bottomNavigationBarThemeDark,
+        textButtonTheme: AppTheme().textButtonThemeDark,
+        dialogTheme: AppTheme().dialogThemeDark,
+      ),
     );
   }
 }

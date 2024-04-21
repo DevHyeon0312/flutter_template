@@ -22,7 +22,6 @@ class MainPage extends ConsumerWidget {
         }
       },
       child: Scaffold(
-        appBar: AppBar(title: const Text('Main')),
         body: IndexedStack(
           index: currentIndex,
           children: const [
@@ -38,12 +37,22 @@ class MainPage extends ConsumerWidget {
             ref.read(mainTabIndexProvider.notifier).state = index;
           },
           items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.dashboard_rounded), label: 'Basic'),
+              icon: Icon(Icons.home),
+              label: 'Home',
+            ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.animation), label: 'Animation'),
-            BottomNavigationBarItem(icon: Icon(Icons.work), label: 'Practical'),
+              icon: Icon(Icons.dashboard_rounded),
+              label: 'Basic',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.animation),
+              label: 'Animation',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.work),
+              label: 'Practical',
+            ),
           ],
           type: BottomNavigationBarType.fixed,
         ),
