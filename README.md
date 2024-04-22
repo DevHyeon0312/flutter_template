@@ -60,7 +60,7 @@ flutter pub run flutter_launcher_icons:main
     │   │   │   └── main_page.dart
     │   │   │       
     │   │   └── page(Page)
-    │   │       ├── home(Home Page)
+    │   │       ├── screen_home(Home Page)
     │   │       │   ├── widget(Home Page Widget)
     │   │       │   │   └── ...
     │   │       │   │
@@ -71,6 +71,18 @@ flutter pub run flutter_launcher_icons:main
     │   │       │   │   └── ...
     │   │       │   │   
     │   │       │   └── home_page.dart
+    │   │       │
+    │   │       ├── detail_elevated_button(Detail Elevated Button Page)
+    │   │       │   ├── widget(Detail Elevated Button Page Widget)
+    │   │       │   │   └── ...
+    │   │       │   │
+    │   │       │   ├── provider(Detail Elevated Button Page Provider)
+    │   │       │   │   └── ...
+    │   │       │   │
+    │   │       │   ├── viewmodel(Detail Elevated Button Page ViewModel)
+    │   │       │   │   └── ...
+    │   │       │   │
+    │   │       │   └── elevated_button_detail_page.dart
     │   │       │
     │   │       └── ...
     │   │

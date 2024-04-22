@@ -1,6 +1,6 @@
 import 'package:flutter_template/app/route/app_route.dart';
 import 'package:flutter_template/app/ui/main/main_page.dart';
-import 'package:flutter_template/app/ui/page/home/home_page.dart';
+import 'package:flutter_template/app/ui/page/screen_home/home_page.dart';
 import 'package:flutter_template/util/platform_util.dart';
 import 'package:get/get.dart';
 

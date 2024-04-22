@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/app/route/app_route.dart';
 import 'package:flutter_template/app/ui/main/provider/main_tab_provider.dart';
-import 'package:flutter_template/app/ui/page/animation_component/animation_component_page.dart';
-import 'package:flutter_template/app/ui/page/basic_component/basic_component_page.dart';
-import 'package:flutter_template/app/ui/page/home/home_page.dart';
-import 'package:flutter_template/app/ui/page/practical_component/practical_component_page.dart';
+import 'package:flutter_template/app/ui/page/screen_animation_component/animation_component_page.dart';
+import 'package:flutter_template/app/ui/page/screen_basic_component/basic_component_page.dart';
+import 'package:flutter_template/app/ui/page/screen_home/home_page.dart';
+import 'package:flutter_template/app/ui/page/screen_practical_component/practical_component_page.dart';
 
 class MainPage extends ConsumerWidget {
   const MainPage({super.key});

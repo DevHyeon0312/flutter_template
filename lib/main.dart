@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
         bottomNavigationBarTheme: AppTheme().bottomNavigationBarThemeLight,
         textButtonTheme: AppTheme().textButtonThemeLight,
         dialogTheme: AppTheme().dialogThemeLight,
+        colorScheme: const ColorScheme.light(),
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
@@ -31,6 +32,8 @@ class MyApp extends StatelessWidget {
         bottomNavigationBarTheme: AppTheme().bottomNavigationBarThemeDark,
         textButtonTheme: AppTheme().textButtonThemeDark,
         dialogTheme: AppTheme().dialogThemeDark,
+        canvasColor: Colors.black,
+        colorScheme: const ColorScheme.dark(),
       ),
     );
   }
