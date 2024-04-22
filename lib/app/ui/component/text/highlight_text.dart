@@ -13,6 +13,7 @@ class HighlightText extends StatelessWidget {
     this.style,
   });
 
+  //TODO text field -> textfield 로 검색해도 강조되고, text field 로 검색해도 간조되도록 수정 필요
   @override
   Widget build(BuildContext context) {
     if (keyword == null ||
@@ -21,27 +22,52 @@ class HighlightText extends StatelessWidget {
       DebugLog.i('keyword is null or empty or not found : $keyword');
       return Text(text, style: style);
     }
-    //TODO text field -> textfield 로 검색해도 강조되고, text field 로 검색해도 강조되도록 수정 필요
-    final startIndex = text.toLowerCase().indexOf(keyword!.toLowerCase());
-    final endIndex = startIndex + keyword!.length;
-    final beforeKeyword = text.substring(0, startIndex);
-    final keywordText = text.substring(startIndex, endIndex);
-    final afterKeyword = text.substring(endIndex);
+
+    var lowerText = text.toLowerCase();
+    var lowerKeyword = keyword!.toLowerCase();
+
+    List<TextSpan> spans = [];
+    int start = 0;
+    int found = -1;
+    TextStyle? highlightStyle = style?.copyWith(
+          color: Theme.of(context).colorScheme.secondary,
+          fontWeight: FontWeight.bold,
+        ) ??
+        TextStyle(
+          color: Theme.of(context).colorScheme.secondary,
+          fontWeight: FontWeight.bold,
+        );
+
+    while ((found = lowerText.indexOf(lowerKeyword, start)) != -1) {
+      if (found - start > 0) {
+        spans.add(
+          TextSpan(
+            text: text.substring(start, found),
+            style: style,
+          ),
+        );
+      }
+      spans.add(
+        TextSpan(
+          text: text.substring(found, found + keyword!.length),
+          style: highlightStyle,
+        ),
+      );
+      start = found + lowerKeyword.length;
+    }
+    if (start < lowerText.length) {
+      spans.add(
+        TextSpan(
+          text: text.substring(start),
+          style: style,
+        ),
+      );
+    }
+
     return RichText(
       text: TextSpan(
-        style: style,
-        children: <TextSpan>[
-          TextSpan(text: beforeKeyword),
-          TextSpan(
-            text: keywordText,
-            style: style?.copyWith(color: Colors.cyan) ??
-                const TextStyle(
-                  color: Colors.cyan,
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
-          TextSpan(text: afterKeyword),
-        ],
+        style: DefaultTextStyle.of(context).style,
+        children: spans,
       ),
     );
   }
