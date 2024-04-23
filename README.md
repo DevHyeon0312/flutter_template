@@ -156,3 +156,25 @@ flutter pub run flutter_launcher_icons:main
     └── util(My App Util)
         └── ...
 ```
+
+
+#### FireBase
+```bash (terminal)
+curl -sL https://firebase.tools | bash
+firebase login
+```
+```bash (terminal)
+dart pub global activate flutterfire_cli
+```
+```bash (project root)
+flutterfire configure --project=flutter-templete-devhyeon
+```
+
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
+
+// ...
+
+await Firebase.initializeApp(
+options: DefaultFirebaseOptions.currentPlatform,
+);

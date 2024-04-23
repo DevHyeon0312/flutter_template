@@ -41,6 +41,8 @@ dependencies:
   # Color Picker : https://pub.dev/packages/flutter_colorpicker
   flutter_colorpicker: ^1.0.3
 
+  firebase_core: ^1.10.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
