@@ -24,7 +24,7 @@ mixin MyBottomNavigationBarTheme {
     unselectedIconTheme: IconThemeData(size: 24),
     selectedItemColor: Colors.white,
     unselectedItemColor: Colors.grey,
-    backgroundColor: Colors.black,
+    backgroundColor: Color(0xff121212),
     unselectedLabelStyle: TextStyle(fontSize: 10),
     selectedLabelStyle: TextStyle(fontSize: 12),
     showSelectedLabels: true,

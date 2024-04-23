@@ -20,7 +20,6 @@ class BasicCardItem extends StatefulWidget {
 class _BasicCardItemState extends State<BasicCardItem> {
   @override
   Widget build(BuildContext context) {
-    DebugLog.i(widget.highlightKeyword ?? '');
     return Card(
       child: InkWell(
         borderRadius: BorderRadius.circular(16),

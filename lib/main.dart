@@ -15,25 +15,30 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       initialRoute: AppRoute.initial.name,
       getPages: AppPage.pages,
       theme: ThemeData(
         useMaterial3: true,
+        colorScheme: const ColorScheme.light(),
+        canvasColor: Colors.white,
         appBarTheme: AppTheme().appBarThemeLight,
         bottomNavigationBarTheme: AppTheme().bottomNavigationBarThemeLight,
         textButtonTheme: AppTheme().textButtonThemeLight,
         dialogTheme: AppTheme().dialogThemeLight,
-        colorScheme: const ColorScheme.light(),
+        cardTheme: AppTheme().cardThemeLight,
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
+        colorScheme: const ColorScheme.dark().copyWith(
+          background: const Color(0xff1e1e1e),
+        ),
+        canvasColor: Colors.black,
         appBarTheme: AppTheme().appBarThemeDark,
         bottomNavigationBarTheme: AppTheme().bottomNavigationBarThemeDark,
         textButtonTheme: AppTheme().textButtonThemeDark,
         dialogTheme: AppTheme().dialogThemeDark,
-        canvasColor: Colors.black,
-        colorScheme: const ColorScheme.dark(),
+        cardTheme: AppTheme().cardThemeDark,
       ),
     );
   }

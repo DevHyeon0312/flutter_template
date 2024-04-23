@@ -5,6 +5,7 @@ import 'package:flutter_template/app/ui/component/card/basic_card_item.dart';
 import 'package:flutter_template/app/ui/component/text_field/basic_search_text_field.dart';
 import 'package:flutter_template/app/ui/page/screen_basic_component/provider/basic_component_provider.dart';
 import 'package:flutter_template/util/debug_log.dart';
+import 'package:get/get.dart';
 
 class BasicComponentPage extends ConsumerStatefulWidget {
   const BasicComponentPage({super.key});
@@ -66,14 +67,19 @@ class _BasicComponentPageState extends ConsumerState<BasicComponentPage>
                     )
                   : SliverList(
                       delegate: SliverChildBuilderDelegate(
-                        (context, index) => ListTile(
-                            title: BasicCardItem(
-                          component: state.components[index],
-                          highlightKeyword: state.lastSearchText,
-                          onClickComponent: () {
-                            DebugLog.d('Component clicked');
-                          },
-                        )),
+                        (context, index) => Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 16.0, vertical: 4.0),
+                          child: BasicCardItem(
+                            component: state.components[index],
+                            highlightKeyword: state.lastSearchText,
+                            onClickComponent: () {
+                              Get.toNamed(
+                                AppRoute.detailBasicSearchTextField.name,
+                              );
+                            },
+                          ),
+                        ),
                         childCount: state.components.length,
                       ),
                     ),

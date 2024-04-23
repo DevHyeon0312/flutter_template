@@ -13,13 +13,11 @@ class HighlightText extends StatelessWidget {
     this.style,
   });
 
-  //TODO text field -> textfield 로 검색해도 강조되고, text field 로 검색해도 간조되도록 수정 필요
   @override
   Widget build(BuildContext context) {
     if (keyword == null ||
         keyword!.isEmpty ||
         !text.toLowerCase().contains(keyword!.toLowerCase())) {
-      DebugLog.i('keyword is null or empty or not found : $keyword');
       return Text(text, style: style);
     }
 

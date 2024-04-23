@@ -3,9 +3,24 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class BasicSearchTextField extends StatefulWidget {
-  const BasicSearchTextField({super.key, required this.onSearchChanged});
+  const BasicSearchTextField({
+    super.key,
+    required this.onSearchChanged,
+    this.debounceDuration = 200,
+    this.horizontalPadding = 20,
+    this.borderRadius = 30,
+    this.borderColor = Colors.grey,
+    this.hintText = 'Search...',
+    this.suffixIcon = Icons.search,
+  });
 
   final Function(String) onSearchChanged;
+  final int debounceDuration;
+  final double horizontalPadding;
+  final double borderRadius;
+  final Color borderColor;
+  final String hintText;
+  final IconData? suffixIcon;
 
   @override
   State<BasicSearchTextField> createState() => _BasicSearchTextFieldState();
@@ -27,7 +42,7 @@ class _BasicSearchTextFieldState extends State<BasicSearchTextField> {
 
   void _onSearchChanged(String value) {
     if (_debounce?.isActive ?? false) _debounce!.cancel();
-    _debounce = Timer(const Duration(milliseconds: 200), () {
+    _debounce = Timer(Duration(milliseconds: widget.debounceDuration), () {
       widget.onSearchChanged(value);
     });
   }
@@ -40,17 +55,17 @@ class _BasicSearchTextFieldState extends State<BasicSearchTextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
+      padding: EdgeInsets.symmetric(horizontal: widget.horizontalPadding),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(widget.borderRadius),
         border: Border.all(
-          color: Colors.grey.withOpacity(0.5),
+          color: widget.borderColor,
         ),
       ),
       child: TextField(
-        decoration: const InputDecoration(
-          hintText: 'Search...',
-          suffixIcon: Icon(Icons.search),
+        decoration: InputDecoration(
+          hintText: widget.hintText,
+          suffixIcon: Icon(widget.suffixIcon),
           border: InputBorder.none,
         ),
         onChanged: _onSearchChanged,

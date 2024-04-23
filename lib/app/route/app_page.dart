@@ -1,5 +1,6 @@
 import 'package:flutter_template/app/route/app_route.dart';
 import 'package:flutter_template/app/ui/main/main_page.dart';
+import 'package:flutter_template/app/ui/page/detail_basic_search_text_field/detail_basic_search_text_field_page.dart';
 import 'package:flutter_template/app/ui/page/screen_home/home_page.dart';
 import 'package:flutter_template/util/platform_util.dart';
 import 'package:get/get.dart';
@@ -15,6 +16,13 @@ class AppPage {
       name: AppRoute.home.name,
       page: () => const HomePage(),
       popGesture: AppRoute.home.canPop,
+      transition: _getTransition(),
+      transitionDuration: _getTransitionDuration(),
+    ),
+    GetPage(
+      name: AppRoute.detailBasicSearchTextField.name,
+      page: () => const DetailBasicSearchTextFieldPage(),
+      popGesture: AppRoute.detailBasicSearchTextField.canPop,
       transition: _getTransition(),
       transitionDuration: _getTransitionDuration(),
     ),

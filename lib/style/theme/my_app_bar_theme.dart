@@ -21,7 +21,7 @@ mixin MyAppBarTheme {
   get appBarThemeLight => _appBarThemeLight;
 
   final AppBarTheme _appBarThemeDark = const AppBarTheme(
-    backgroundColor: Colors.black,
+    backgroundColor: Color(0xff1e1e1e),
     foregroundColor: Colors.white,
     shadowColor: Colors.black,
     surfaceTintColor: Colors.black,
