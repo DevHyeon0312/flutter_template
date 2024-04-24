@@ -41,7 +41,11 @@ dependencies:
   # Color Picker : https://pub.dev/packages/flutter_colorpicker
   flutter_colorpicker: ^1.0.3
 
-  firebase_core: ^1.10.0
+  firebase_core: ^2.30.1
+  firebase_auth: ^4.19.3
+
+  # auth with google
+  google_sign_in: ^6.2.1
 
 dev_dependencies:
   flutter_test:

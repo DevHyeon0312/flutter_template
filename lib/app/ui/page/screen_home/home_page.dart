@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/app/route/app_route.dart';
+import 'package:flutter_template/app/ui/page/screen_home/provider/home_page_provider.dart';
 import 'package:flutter_template/util/debug_log.dart';
 
 class HomePage extends ConsumerStatefulWidget {
@@ -26,6 +27,7 @@ class _HomePageState extends ConsumerState<HomePage>
 
   @override
   Widget build(BuildContext context) {
+    var state = ref.watch(homePageProvider);
     return PopScope(
       canPop: AppRoute.home.canPop,
       onPopInvoked: (didPop) async {
@@ -34,30 +36,36 @@ class _HomePageState extends ConsumerState<HomePage>
         }
       },
       child: Scaffold(
-        body: CustomScrollView(
-          slivers: <Widget>[
-            SliverAppBar(
-              title: Text('Home'),
-              floating: true,
-              snap: true,
-              pinned: true,
-              expandedHeight: 200,
-              flexibleSpace: FlexibleSpaceBar(
-                background: Image.network(
-                  'https://picsum.photos/250?image=9',
-                  fit: BoxFit.cover,
-                ),
+        body: SafeArea(
+          child: CustomScrollView(
+            slivers: <Widget>[
+              SliverToBoxAdapter(
+                child:
+                    state.isLogin ? Text('Logged in') : Text('Not logged in'),
               ),
-            ),
-            SliverList(
-              delegate: SliverChildBuilderDelegate(
-                (context, index) => ListTile(
-                  title: Text('Item $index'),
-                ),
-                childCount: 100,
-              ),
-            ),
-          ],
+              SliverToBoxAdapter(
+                  child: state.user != null
+                      ? Text('User: ${state.user!.displayName}')
+                      : Text('User: null')),
+              SliverToBoxAdapter(
+                  child: Column(
+                children: <Widget>[
+                  ElevatedButton(
+                    onPressed: () {
+                      ref.read(homePageProvider.notifier).signInWithGoogle();
+                    },
+                    child: const Text('Sign in with Google'),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      ref.read(homePageProvider.notifier).signOut();
+                    },
+                    child: const Text('Sign out'),
+                  ),
+                ],
+              ))
+            ],
+          ),
         ),
       ),
     );

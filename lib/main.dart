@@ -1,3 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_template/util/debug_log.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/app/route/app_page.dart';
@@ -5,7 +9,26 @@ import 'package:flutter_template/app/route/app_route.dart';
 import 'package:flutter_template/style/theme/app_theme.dart';
 import 'package:get/get.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  ).then((value) {
+    // Firebase.initializeApp() completed successfully
+    DebugLog.d('Firebase.initializeApp() completed successfully ${value.name}');
+    FirebaseAuth.instanceFor(app: value);
+  }).onError((error, stackTrace) {
+    // Firebase.initializeApp() completed with error
+    DebugLog.e(
+      'Firebase.initializeApp() completed with error',
+      error: error,
+      stackTrace: stackTrace,
+    );
+  }).whenComplete(() {
+    // Firebase.initializeApp() completed (same finally)
+  });
+
   runApp(const ProviderScope(child: MyApp()));
 }
 
