@@ -3,30 +3,30 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/app/route/app_route.dart';
 import 'package:flutter_template/app/ui/component/card/basic_card_item.dart';
 import 'package:flutter_template/app/ui/component/text_field/basic_search_text_field.dart';
-import 'package:flutter_template/app/ui/page/screen_basic_component/provider/basic_component_provider.dart';
+import 'package:flutter_template/app/ui/screen/basic_component/provider/basic_component_provider.dart';
 import 'package:flutter_template/util/debug_log.dart';
 import 'package:get/get.dart';
 
-class BasicComponentPage extends ConsumerStatefulWidget {
-  const BasicComponentPage({super.key});
+class BasicComponentScreen extends ConsumerStatefulWidget {
+  const BasicComponentScreen({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
-      _BasicComponentPageState();
+      _BasicComponentScreenState();
 }
 
-class _BasicComponentPageState extends ConsumerState<BasicComponentPage>
+class _BasicComponentScreenState extends ConsumerState<BasicComponentScreen>
     with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-    DebugLog.d('BasicComponentPage initialized');
+    DebugLog.d('BasicComponentScreen initialized');
     ref.read(basicComponentProvider.notifier).getBasicComponents('');
   }
 
   @override
   void dispose() {
-    DebugLog.d('BasicComponentPage disposed');
+    DebugLog.d('BasicComponentScreen disposed');
     super.dispose();
   }
 
@@ -34,7 +34,7 @@ class _BasicComponentPageState extends ConsumerState<BasicComponentPage>
   Widget build(BuildContext context) {
     final state = ref.watch(basicComponentProvider);
     return PopScope(
-      canPop: AppRoute.home.canPop,
+      canPop: AppRoute.main.canPop,
       onPopInvoked: (didPop) async {
         if (didPop) {
           return;

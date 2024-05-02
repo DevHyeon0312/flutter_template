@@ -3,32 +3,33 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/app/route/app_route.dart';
 import 'package:flutter_template/util/debug_log.dart';
 
-class PracticalComponentPage extends ConsumerStatefulWidget {
-  const PracticalComponentPage({super.key});
+class AnimationComponentScreen extends ConsumerStatefulWidget {
+  const AnimationComponentScreen({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() =>
-      _PracticalComponentPageState();
+      _AnimationComponentScreenState();
 }
 
-class _PracticalComponentPageState extends ConsumerState<PracticalComponentPage>
+class _AnimationComponentScreenState
+    extends ConsumerState<AnimationComponentScreen>
     with WidgetsBindingObserver {
   @override
   void initState() {
     super.initState();
-    DebugLog.i('PracticalComponentPage initialized');
+    DebugLog.d('AnimationComponentScreen initialized');
   }
 
   @override
   void dispose() {
-    DebugLog.i('PracticalComponentPage disposed');
+    DebugLog.d('AnimationComponentScreen disposed');
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      canPop: AppRoute.home.canPop,
+      canPop: AppRoute.main.canPop,
       onPopInvoked: (didPop) async {
         if (didPop) {
           return;
@@ -36,7 +37,7 @@ class _PracticalComponentPageState extends ConsumerState<PracticalComponentPage>
       },
       child: const Scaffold(
         body: Center(
-          child: Text('PracticalComponentPage'),
+          child: Text('AnimationComponentScreen'),
         ),
       ),
     );

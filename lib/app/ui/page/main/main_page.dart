@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/app/route/app_route.dart';
-import 'package:flutter_template/app/ui/main/provider/main_tab_provider.dart';
-import 'package:flutter_template/app/ui/page/screen_animation_component/animation_component_page.dart';
-import 'package:flutter_template/app/ui/page/screen_basic_component/basic_component_page.dart';
-import 'package:flutter_template/app/ui/page/screen_home/home_page.dart';
-import 'package:flutter_template/app/ui/page/screen_practical_component/practical_component_page.dart';
+import 'package:flutter_template/app/ui/page/main/provider/main_tab_provider.dart';
+import 'package:flutter_template/app/ui/screen/animation_component/animation_component_screen.dart';
+import 'package:flutter_template/app/ui/screen/basic_component/basic_component_screen.dart';
+import 'package:flutter_template/app/ui/screen/home/home_screen.dart';
+import 'package:flutter_template/app/ui/screen/practical_component/practical_component_screen.dart';
 
 class MainPage extends ConsumerWidget {
   const MainPage({super.key});
@@ -15,7 +15,7 @@ class MainPage extends ConsumerWidget {
     int currentIndex = ref.watch(mainTabIndexProvider);
 
     return PopScope(
-      canPop: AppRoute.initial.canPop,
+      canPop: AppRoute.main.canPop,
       onPopInvoked: (didPop) async {
         if (didPop) {
           return;
@@ -25,10 +25,10 @@ class MainPage extends ConsumerWidget {
         body: IndexedStack(
           index: currentIndex,
           children: const [
-            HomePage(),
-            BasicComponentPage(),
-            AnimationComponentPage(),
-            PracticalComponentPage(),
+            HomeScreen(),
+            BasicComponentScreen(),
+            AnimationComponentScreen(),
+            PracticalComponentScreen(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(

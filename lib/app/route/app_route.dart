@@ -1,6 +1,5 @@
 enum AppRoute {
-  initial(name: '/', canPop: false),
-  home(name: '/home', canPop: true),
+  main(name: '/', canPop: false),
   detailBasicSearchTextField(name: '/basic_search_text_field', canPop: true),
   ;
 

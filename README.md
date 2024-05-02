@@ -54,41 +54,26 @@ flutter pub run flutter_launcher_icons:main
     │   │   └── app_route.dart
     │   │
     │   ├── ui(My App UI)
-    │   │   ├── component(Reusable Component)
+    │   │   ├── component(Reusable Component : Widget -> Similar to View on Android)
     │   │   │   └── ... [TODO]
-    │   │   │
-    │   │   ├── main(Main Page)
-    │   │   │   ├── provider(Main Provider)
-    │   │   │   │   ├── main_tab_provider.dart
-    │   │   │   │   └── ...
-    │   │   │   │
-    │   │   │   └── main_page.dart
     │   │   │       
-    │   │   └── page(Page)
-    │   │       ├── screen_home(Home Page)
-    │   │       │   ├── widget(Home Page Widget)
-    │   │       │   │   └── ...
-    │   │       │   │
-    │   │       │   ├── provider(Home Page Provider)
-    │   │       │   │   └── ...
-    │   │       │   │
-    │   │       │   ├── viewmodel(Home Page ViewModel)
-    │   │       │   │   └── ...
-    │   │       │   │   
-    │   │       │   └── home_page.dart
-    │   │       │
-    │   │       ├── detail_elevated_button(Detail Elevated Button Page)
-    │   │       │   ├── widget(Detail Elevated Button Page Widget)
-    │   │       │   │   └── ...
-    │   │       │   │
-    │   │       │   ├── provider(Detail Elevated Button Page Provider)
-    │   │       │   │   └── ...
-    │   │       │   │
-    │   │       │   ├── viewmodel(Detail Elevated Button Page ViewModel)
-    │   │       │   │   └── ...
-    │   │       │   │
-    │   │       │   └── elevated_button_detail_page.dart
-    │   │       │
+    │   │   ├── page(Similar to Activity on Android)
+    │   │   │   ├── main(Main Page)
+    │   │   │   │   ├── provider(Main Provider)
+    │   │   │   │   └── main_page.dart
+    │   │   │   │
+    │   │   │   ├── detail_basic_search_text_field
+    │   │   │   │   ├── provider
+    │   │   │   │   ├── viewmodel
+    │   │   │   │   └── detail_basic_search_text_field_page.dart
+    │   │   │   │
+    │   │   │   └── ...
+    │   │   │   
+    │   │   └─── screen(Similar to Fragment on Android)
+    │   │       ├── home(in Main Page Screen)
+    │   │       │   ├── provider(Home Screen Provider)
+    │   │       │   ├── veiwmodel(Home Screen Provider)
+    │   │       │   └── home_screen.dart
     │   │       └── ...
     │   │
     │   └── usecase(App UseCase - Business Logic : Used Local Repository & Network Repository)

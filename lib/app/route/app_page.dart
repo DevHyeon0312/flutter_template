@@ -1,23 +1,15 @@
 import 'package:flutter_template/app/route/app_route.dart';
-import 'package:flutter_template/app/ui/main/main_page.dart';
 import 'package:flutter_template/app/ui/page/detail_basic_search_text_field/detail_basic_search_text_field_page.dart';
-import 'package:flutter_template/app/ui/page/screen_home/home_page.dart';
+import 'package:flutter_template/app/ui/page/main/main_page.dart';
 import 'package:flutter_template/util/platform_util.dart';
 import 'package:get/get.dart';
 
 class AppPage {
   static final pages = [
     GetPage(
-      name: AppRoute.initial.name,
+      name: AppRoute.main.name,
       page: () => const MainPage(),
-      popGesture: AppRoute.initial.canPop,
-    ),
-    GetPage(
-      name: AppRoute.home.name,
-      page: () => const HomePage(),
-      popGesture: AppRoute.home.canPop,
-      transition: _getTransition(),
-      transitionDuration: _getTransitionDuration(),
+      popGesture: AppRoute.main.canPop,
     ),
     GetPage(
       name: AppRoute.detailBasicSearchTextField.name,

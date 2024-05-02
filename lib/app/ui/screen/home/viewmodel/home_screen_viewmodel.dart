@@ -4,14 +4,12 @@ import 'package:flutter_template/app/data/model/user.dart';
 import 'package:flutter_template/app/usecase/auth_usecase.dart';
 import 'package:flutter_template/util/debug_log.dart';
 
-class HomePageViewModel extends StateNotifier<HomePageViewModelState> {
-  HomePageViewModel(this.authUseCase) : super(const HomePageViewModelState());
+class HomeScreenViewModel extends StateNotifier<HomeScreenViewModelState> {
+  HomeScreenViewModel(this.authUseCase)
+      : super(const HomeScreenViewModelState());
 
   final AuthUseCase authUseCase;
 
-  //TODO 로컬에서 로그인에 대한 정보를 가져오는 로직 필요
-
-  //TODO 로그인페이지 만들어서 이동 예정
   void signOut() async {
     await authUseCase.signOut().then((_) {
       state = state.copyWith(user: null);
@@ -25,7 +23,6 @@ class HomePageViewModel extends StateNotifier<HomePageViewModelState> {
     });
   }
 
-  //TODO 로그인페이지 만들어서 이동 예정
   void signInWithGoogle() async {
     await authUseCase.signInWithGoogle().then((value) {
       state = state.copyWith(user: value);
@@ -41,19 +38,19 @@ class HomePageViewModel extends StateNotifier<HomePageViewModelState> {
 }
 
 @immutable
-class HomePageViewModelState {
+class HomeScreenViewModelState {
   final User? user;
   final bool isLogin;
 
-  const HomePageViewModelState({
+  const HomeScreenViewModelState({
     this.user,
     this.isLogin = false,
   });
 
-  HomePageViewModelState copyWith({
+  HomeScreenViewModelState copyWith({
     User? user,
   }) {
-    return HomePageViewModelState(
+    return HomeScreenViewModelState(
       user: user ?? this.user,
     );
   }
