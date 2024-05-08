@@ -1,13 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter_template/util/debug_log.dart';
-import 'firebase_options.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_template/app/route/app_page.dart';
 import 'package:flutter_template/app/route/app_route.dart';
 import 'package:flutter_template/style/theme/app_theme.dart';
+import 'package:flutter_template/util/debug_log.dart';
 import 'package:get/get.dart';
+
+import 'firebase_options.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

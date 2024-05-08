@@ -20,4 +20,23 @@ class ComponentUseCase {
                 .contains(searchText.toLowerCase()))
         .toList();
   }
+
+  Future<List<Component>> getAnimationComponents(
+      {required String searchText}) async {
+    return [
+      Component(
+        type: ComponentType.animation,
+        name: 'AnimationCrossFade1',
+        description:
+            'When clicked, cross-fade animation is applied to firstChild and secondChild.',
+        routeName: AppRoute.detailAnimationCrossFade1.name,
+      ),
+    ]
+        .where((element) =>
+            element.name.toLowerCase().contains(searchText.toLowerCase()) ||
+            element.description
+                .toLowerCase()
+                .contains(searchText.toLowerCase()))
+        .toList();
+  }
 }
