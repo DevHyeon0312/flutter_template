@@ -62,7 +62,7 @@ class _DetailAnimationCrossFade1PageState
                                 fontSize: 12.0,
                               ),
                             ),
-                            titlePadding: EdgeInsets.all(8),
+                            titlePadding: const EdgeInsets.all(8),
                             contentPadding: EdgeInsets.zero,
                             content: SyntaxView(
                                 code: snapshot.data ?? '',

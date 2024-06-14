@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/util/debug_log.dart';
 
 class HighlightText extends StatelessWidget {
   final String text;

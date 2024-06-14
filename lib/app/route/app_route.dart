@@ -1,5 +1,3 @@
-import 'package:flutter_template/app/ui/component/animation_cross_fade_1/animation_cross_fade_1.dart';
-import 'package:flutter_template/util/file_util.dart';
 
 enum AppRoute {
   main(

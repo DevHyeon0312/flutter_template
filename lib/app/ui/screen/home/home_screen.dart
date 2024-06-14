@@ -42,7 +42,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
             slivers: <Widget>[
               SliverToBoxAdapter(
                 child:
-                    state.isLogin ? Text('Logged in') : Text('Not logged in'),
+                    state.isLogin ? const Text('Logged in') : const Text('Not logged in'),
               ),
               SliverToBoxAdapter(
                 child: state.user != null

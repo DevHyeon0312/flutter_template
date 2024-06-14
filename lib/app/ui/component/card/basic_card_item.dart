@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/app/data/model/component.dart';
 import 'package:flutter_template/app/ui/component/text/highlight_text.dart';
-import 'package:flutter_template/util/debug_log.dart';
 
 class BasicCardItem extends StatefulWidget {
   const BasicCardItem(

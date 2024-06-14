@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData(
         useMaterial3: true,
         colorScheme: const ColorScheme.dark().copyWith(
-          background: const Color(0xff1e1e1e),
+          surface: const Color(0xff1e1e1e),
         ),
         canvasColor: Colors.black,
         appBarTheme: AppTheme().appBarThemeDark,

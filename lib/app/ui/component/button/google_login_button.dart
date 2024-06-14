@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 
 class GoogleLoginButton extends StatefulWidget {
   const GoogleLoginButton({
@@ -33,7 +32,7 @@ class _GoogleLoginButtonState extends State<GoogleLoginButton> {
         onTap: widget.onPressed,
         borderRadius:
             isDarkMode ? BorderRadius.circular(8) : BorderRadius.circular(8),
-        overlayColor: MaterialStateProperty.all(Colors.grey.withOpacity(0.5)),
+        overlayColor: WidgetStateProperty.all(Colors.grey.withOpacity(0.5)),
         child: Container(
           width: widget.width,
           padding: const EdgeInsets.all(8.0),
@@ -45,7 +44,7 @@ class _GoogleLoginButtonState extends State<GoogleLoginButton> {
                 height: 32,
               ),
               const SizedBox(width: 8),
-              Expanded(
+              const Expanded(
                 child: Text(
                   'Sign in with Google',
                   style: TextStyle(
