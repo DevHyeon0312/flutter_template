@@ -1,5 +1,6 @@
 import 'package:flutter_template/app/route/app_route.dart';
 import 'package:flutter_template/app/ui/page/detail_animation_cross_fade_1/detail_animation_cross_fade_1_page.dart';
+import 'package:flutter_template/app/ui/page/detail_animation_write_text/detail_animation_write_text_page.dart';
 import 'package:flutter_template/app/ui/page/detail_basic_search_text_field/detail_basic_search_text_field_page.dart';
 import 'package:flutter_template/app/ui/page/main/main_page.dart';
 import 'package:flutter_template/util/platform_util.dart';
@@ -25,7 +26,14 @@ class AppPage {
       popGesture: AppRoute.detailAnimationCrossFade1.canPop,
       transition: _getTransition(),
       transitionDuration: _getTransitionDuration(),
-    )
+    ),
+    GetPage(
+      name: AppRoute.detailAnimationWriteText.name,
+      page: () => const DetailAnimationWriteTextPage(),
+      popGesture: AppRoute.detailAnimationWriteText.canPop,
+      transition: _getTransition(),
+      transitionDuration: _getTransitionDuration(),
+    ),
   ];
 
   static Transition? _getTransition() {

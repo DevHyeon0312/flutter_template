@@ -76,7 +76,7 @@ class _AnimationComponentScreenState
                             highlightKeyword: state.lastSearchText,
                             onClickComponent: () {
                               Get.toNamed(
-                                AppRoute.detailAnimationCrossFade1.name,
+                                state.components[index].routeName,
                               );
                             },
                           ),

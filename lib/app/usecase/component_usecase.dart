@@ -14,10 +14,10 @@ class ComponentUseCase {
       ),
     ]
         .where((element) =>
-            element.name.toLowerCase().contains(searchText.toLowerCase()) ||
-            element.description
-                .toLowerCase()
-                .contains(searchText.toLowerCase()))
+    element.name.toLowerCase().contains(searchText.toLowerCase()) ||
+        element.description
+            .toLowerCase()
+            .contains(searchText.toLowerCase()))
         .toList();
   }
 
@@ -28,15 +28,21 @@ class ComponentUseCase {
         type: ComponentType.animation,
         name: 'AnimationCrossFade1',
         description:
-            'When clicked, cross-fade animation is applied to firstChild and secondChild.',
+        'When clicked, cross-fade animation is applied to firstChild and secondChild.',
         routeName: AppRoute.detailAnimationCrossFade1.name,
+      ),
+      Component(
+          type: ComponentType.animation,
+          name: 'AnimationWriteText',
+          description: 'Show the text one letter at a time.',
+          routeName: AppRoute.detailAnimationWriteText.name,
       ),
     ]
         .where((element) =>
-            element.name.toLowerCase().contains(searchText.toLowerCase()) ||
-            element.description
-                .toLowerCase()
-                .contains(searchText.toLowerCase()))
+    element.name.toLowerCase().contains(searchText.toLowerCase()) ||
+        element.description
+            .toLowerCase()
+            .contains(searchText.toLowerCase()))
         .toList();
   }
 }
