@@ -6,6 +6,7 @@ import 'package:flutter_template/app/ui/screen/animation_component/animation_com
 import 'package:flutter_template/app/ui/screen/basic_component/basic_component_screen.dart';
 import 'package:flutter_template/app/ui/screen/home/home_screen.dart';
 import 'package:flutter_template/app/ui/screen/practical_component/practical_component_screen.dart';
+import 'package:flutter_template/app/ui/screen/quiz/quiz_screen.dart';
 
 class MainPage extends ConsumerWidget {
   const MainPage({super.key});
@@ -26,6 +27,7 @@ class MainPage extends ConsumerWidget {
           index: currentIndex,
           children: const [
             HomeScreen(),
+            QuizScreen(),
             BasicComponentScreen(),
             AnimationComponentScreen(),
             PracticalComponentScreen(),
@@ -40,6 +42,10 @@ class MainPage extends ConsumerWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.quiz),
+              label: 'Quiz'
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.dashboard_rounded),

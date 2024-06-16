@@ -21,13 +21,13 @@ class _AnimationComponentScreenState
   @override
   void initState() {
     super.initState();
-    DebugLog.d('BasicComponentScreen initialized');
+    DebugLog.d('AnimationComponentScreen initialized');
     ref.read(animationComponentProvider.notifier).getAnimationComponents('');
   }
 
   @override
   void dispose() {
-    DebugLog.d('BasicComponentScreen disposed');
+    DebugLog.d('AnimationComponentScreen disposed');
     super.dispose();
   }
 
