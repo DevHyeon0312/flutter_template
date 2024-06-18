@@ -6,7 +6,8 @@ class QuizUseCase {
       Quiz(
           question: 'Flutter란 무엇인가요?',
           answer:
-              'Flutter는 Google에서 개발한 오픈 소스 UI 소프트웨어 개발 키트(SDK)로, 하나의 코드베이스로 Android, iOS, 웹, 데스크탑 애플리케이션을 개발할 수 있습니다.'),
+              'Flutter는 Google에서 개발한 오픈 소스 프레임워크이다.\n'
+                  'UI 소프트웨어 개발 키트(SDK)로, 하나의 코드베이스로 Android, iOS, 웹, 데스크탑 애플리케이션을 개발할 수 있다.'),
       Quiz(
           question: 'Flutter의 주요 장점은 무엇인가요?',
           answer:
@@ -14,7 +15,8 @@ class QuizUseCase {
       Quiz(
           question: 'Dart 언어의 특징은 무엇인가요?',
           answer:
-              'Dart는 Google이 개발한 프로그래밍 언어로, JIT(Just-In-Time) 및 AOT(Ahead-Of-Time) 컴파일을 지원하며, 간결한 문법과 강력한 타입 시스템을 갖추고 있습니다.'),
+              'Dart는 Google이 개발한 프로그래밍 언어로, JIT(Just-In-Time) 및 AOT(Ahead-Of-Time) 컴파일을 지원하며, 간결한 문법과 강력한 타입 시스템을 갖추고 있다.\n'
+                  'JIT 는 코드가 런타임에 코드가 컴파일 된다는 것이고, AOT 는 프로그램이 실행되기 전에 코드를 미리 컴파일 한다는 것'),
       Quiz(
           question: 'Flutter와 React Native의 차이점은 무엇인가요?',
           answer:
@@ -22,11 +24,13 @@ class QuizUseCase {
       Quiz(
           question: 'StatefulWidget과 StatelessWidget의 차이점은 무엇인가요?',
           answer:
-              'StatelessWidget은 변경되지 않는 위젯입니다. StatefulWidget은 상태를 가지고 있으며, 상태 변화에 따라 UI가 업데이트됩니다.'),
+              'StatelessWidget은 변경되지 않는 위젯입니다. StatefulWidget은 상태를 가지고 있으며, 상태 변화에 따라 UI가 업데이트됩니다.\n'
+                  '추가로, Function 방식의 Widget 은 함수가 호출될때마다 새로운 인스턴스를 생성하고, 이는 불필요한 메모리 할당 해제가 발생하여 성능 저하를 초래할 수 있습니다.'),
       Quiz(
           question: 'Flutter에서 상태 관리를 어떻게 하나요?',
           answer:
-              '상태 관리는 setState(), InheritedWidget, Provider, Riverpod, BLoC 등 다양한 방법으로 할 수 있습니다.'),
+              '상태 관리는 setState(), InheritedWidget, Provider, Riverpod, BLoC 등 다양한 방법으로 할 수 있습니다.\n'
+                  '역사적으로 setState() -> InheritedWidget -> BloC -> Provider -> Riverpod 순으로 구글은 권장합니다.'),
       Quiz(
           question: 'Flutter의 위젯 트리 구조에 대해 설명해 주세요.',
           answer:
@@ -48,17 +52,20 @@ class QuizUseCase {
           answer: 'Dart의 async, await 키워드를 사용하여 비동기 프로그래밍을 할 수 있습니다.'),
       Quiz(
           question: 'Future와 Stream의 차이점은 무엇인가요?',
-          answer: 'Future는 단일 비동기 결과를 반환합니다. Stream은 여러 비동기 결과를 순차적으로 반환합니다.'),
+          answer: 'Future는 단일 비동기 결과를 반환합니다. Stream은 여러 비동기 결과를 순차적으로 반환합니다.\n'
+              '플러터에서 Stream 은 Cold Stream, Hot Stream 을 모두 지원하며, 다트는 기본적으로 Cold Stream 이고 Hot Stream 의 경우 broadcast 로 생성해야함.\n'
+              'Cold Stream 은 구독하면 처음부터 발행(코루틴의 flow, rx 의 Observable), hot flow 는 (코루틴의 SharedFlow, StateFlow 이고 rx 에서 Subject) 으로 개념 동일'),
       Quiz(
           question: 'Flutter의 Navigator와 Routing 시스템에 대해 설명해 주세요.',
           answer:
-              'Navigator는 화면 전환을 관리하는 클래스이며, push, pop 메서드를 사용하여 화면을 추가하거나 제거할 수 있습니다. Routing 시스템은 각 화면을 경로로 정의하고, MaterialApp 위젯의 initialRoute와 routes 속성을 사용하여 네비게이션을 설정할 수 있습니다.'),
+              'Navigator는 화면 전환을 관리하는 클래스이며, push, pop 메서드를 사용하여 화면을 추가하거나 제거할 수 있습니다.\n'
+                  'Routing 시스템은 각 화면을 경로로 정의하고, MaterialApp 위젯의 initialRoute와 routes 속성을 사용하여 네비게이션을 설정할 수 있습니다.'),
       Quiz(
           question: 'Flutter에서 애니메이션을 구현하는 방법에 대해 설명해 주세요.',
           answer: 'AnimationController와 다양한 애니메이션 위젯을 사용하여 애니메이션을 구현할 수 있습니다.'),
       Quiz(
           question: 'InheritedWidget의 역할과 사용법에 대해 설명해 주세요.',
-          answer: 'InheritedWidget은 위젯 트리 하위에 있는 위젯들에게 데이터를 전달하는 데 사용됩니다.'),
+          answer: 'InheritedWidget은 위젯 트리 하위에 있는 위젯들에게 데이터를 전달하는 데 사용됩니다.\n트리레벨이 높은 경우에 쉽게 사용할 수 있지만, 이제 구글은 Provider 를 권장하는 편'),
       Quiz(
           question: 'Flutter에서 사용자 입력을 처리하는 방법에 대해 설명해 주세요.',
           answer:
@@ -69,11 +76,11 @@ class QuizUseCase {
       Quiz(
           question: 'JSON 데이터를 처리하는 방법에 대해 설명해 주세요.',
           answer:
-              'jsonDecode, jsonEncode 함수를 사용하여 JSON 데이터를 디코딩하거나 인코딩할 수 있습니다.'),
+              'jsonDecode, jsonEncode 함수를 사용하여 JSON 데이터를 디코딩하거나 인코딩할 수 있습니다.\njson_serializable 라이브러리로 조금 더 쉽게 사용할 수 있고, freezed 를 사용할 수도 있습니다.'),
       Quiz(
           question: 'Flutter에서 폼(validation 포함)을 처리하는 방법에 대해 설명해 주세요.',
           answer:
-              'Form 위젯과 TextFormField를 사용하여 폼을 구성하고, validate 메서드를 사용하여 유효성을 검사할 수 있습니다.'),
+              'Form 위젯과 TextFormField를 사용하여 폼을 구성하고,\nvalidator 속성을 사용하여 항목별 유효성을 검사할 수 있고,\nvalidate() 메소드로 제출시에 validation 검사를 추가로 진행할 수도 있습니다.'),
       Quiz(
           question: 'Provider 패키지의 역할과 사용법에 대해 설명해 주세요.',
           answer: 'Provider는 상태 관리를 위한 패키지로, 위젯 트리에서 상태를 효율적으로 공유할 수 있게 합니다.'),
@@ -108,7 +115,10 @@ class QuizUseCase {
       Quiz(
           question: '플랫폼 채널(Platform Channel)에 대해 설명해 주세요.',
           answer:
-              '플랫폼 채널은 Flutter와 네이티브 코드(Android, iOS) 간의 통신을 가능하게 하는 메커니즘입니다.'),
+              '플랫폼 채널은 Flutter와 네이티브 코드(Android, iOS) 간의 통신을 가능하게 하는 메커니즘입니다.\n'
+                  'MethodChannel 은 단방향으로 플러터에서 네이티브의 함수 호출 후 결과를 1회성으로 받습니다.\n'
+                  'BasicMessageChannel 은 양방향으로 지속적으로 데이터를 주고받는데 사용합니다.\n'
+                  'EventChannel 은 단방향으로 네이티브에서 플러터로 지속적인 이벤트를 전송하는데 사용합니다.'),
       Quiz(
           question: 'Flutter 앱의 성능 최적화 방법에 대해 설명해 주세요.',
           answer:
@@ -163,7 +173,8 @@ class QuizUseCase {
       Quiz(
           question: 'Isolates와 compute 함수의 차이점은 무엇인가요?',
           answer:
-              'Isolates는 Dart의 경량 스레드로, 서로 메모리를 공유하지 않고 독립적으로 실행됩니다. compute 함수는 간단한 병렬 처리를 위해 Isolate를 쉽게 사용할 수 있도록 도와줍니다.'),
+              'Isolates는 Dart의 경량 스레드로, 서로 메모리를 공유하지 않고 독립적으로 실행됩니다. compute 함수는 간단한 병렬 처리를 위해 Isolate를 쉽게 사용할 수 있도록 도와줍니다.\n'
+                  'Isolates 는 직접 닫아줘야하지만, compute 는 자동으로 닫아주므로 조금더 편리합니다. 둘다 스레드풀 관리는 따로 하지 않습니다.'),
       Quiz(
           question: 'Flutter 앱에서 데이터베이스를 사용하는 방법에 대해 설명해 주세요.',
           answer: 'sqflite 패키지를 사용하여 SQLite 데이터베이스를 Flutter 앱에서 사용할 수 있습니다.'),
@@ -178,7 +189,17 @@ class QuizUseCase {
       Quiz(
           question: 'Flutter의 lifecycle에 대해 설명해 주세요.',
           answer:
-              'Flutter 위젯의 생명 주기는 createState(), initState(), didChangeDependencies(), build(), didUpdateWidget(), deactivate(), dispose() 단계로 구성됩니다.'),
+              'Flutter 위젯의 생명 주기는 \n'
+                  'createState() : StatefulWidget 생성시\n'
+                  'initState() : 생성후에 최초로 1회만 실행되는 메소드\n'
+                  'didChangeDependencies() : 부모트리의 의존성이 변경된 경우에 호출되는 메소드\n'
+                  'build() : 위젯의 상태가 바뀔때마다 호출되는 메소드\n'
+                  'didUpdateWidget() : 부모 위젯이 리렌더링 되어서 위젯이 재구성될 때 호출되는 메소드\n'
+                  'setState() : 데이터 변경되었을 때 다시그리기 위해 직접 호출\n'
+                  'deactivate() : 위젯이 위젯트리에서 제거되기 직전에 호출되는 메소드\n'
+                  'dispose() : 위젯이 영구적으로 제거될 때 호출\n'
+                  '단계로 구성됩니다.\n'
+                  'WidgetsBindingObserver 를 사용하여 resumed, inactive, paused, detached 도 관찰이 가능합니다.'),
       Quiz(
           question: 'Accessibility(접근성)를 고려한 Flutter 앱 개발 방법에 대해 설명해 주세요.',
           answer:
@@ -199,10 +220,6 @@ class QuizUseCase {
       Quiz(
           question: 'Dart의 null-aware 연산자에 대해 설명해 주세요.',
           answer: 'null-aware 연산자는 ?. , ??, ??= 등이 있으며, null 값 처리를 간편하게 해줍니다.'),
-      Quiz(
-          question: 'Flutter의 widget lifecycle에 대해 설명해 주세요.',
-          answer:
-              'Flutter 위젯의 생명 주기는 createState(), initState(), didChangeDependencies(), build(), didUpdateWidget(), deactivate(), dispose() 단계로 구성됩니다.'),
       Quiz(
           question: 'Flutter에서 MediaQuery와 LayoutBuilder의 차이점은 무엇인가요?',
           answer:
@@ -258,7 +275,8 @@ class QuizUseCase {
       Quiz(
           question: 'Flutter의 AnimatedBuilder와 AnimatedWidget의 차이점은 무엇인가요?',
           answer:
-              'AnimatedBuilder는 애니메이션 위젯을 빌드하는 데 사용되고, AnimatedWidget은 애니메이션을 적용할 위젯을 정의하는 데 사용됩니다.'),
+              'AnimatedWidget: 간단한 단일 애니메이션에 적합하며, 단일 위젯의 애니메이션 상태를 관리하는 데 유리합니다.\n'
+                  'AnimatedBuilder: 복잡한 애니메이션이나 여러 위젯에 애니메이션을 적용해야 하는 경우에 유리하며, 퍼포먼스 최적화에도 도움이 됩니다.'),
       Quiz(
           question: 'Flutter에서 HTTP 요청에 대한 에러를 처리하는 방법에 대해 설명해 주세요.',
           answer: 'try-catch 문을 사용하여 HTTP 요청 중 발생하는 에러를 처리할 수 있습니다.'),
